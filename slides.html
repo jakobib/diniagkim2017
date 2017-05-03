@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        
+        <meta name="description" content="  &lt;!-- Adjust the default reveal.js style --&gt; &lt;style type=&#34;text/css&#34;&gt; @import &#34;/build/reveal.js/css/">
+        
+        <title>Wikidata as authority linking hub - HackMD</title>
+        <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+        <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KLW9Z3');</script>
+<!-- End Google Tag Manager -->
+        <meta property="fb:app_id" content="1436904003272070">
+
+<meta name="twitter:site" content="@hackmd" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Wikidata as authority linking hub - HackMD" />
+
+<meta name="twitter:description" content="  &lt;!-- Adjust the default reveal.js style --&gt; &lt;style type=&#34;text/css&#34;&gt; @import &#34;/build/reveal.js/css/" />
+
+
+<meta property="og:site_name" content="HackMD" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Wikidata as authority linking hub - HackMD" />
+
+<meta property="og:description" content="  &lt;!-- Adjust the default reveal.js style --&gt; &lt;style type=&#34;text/css&#34;&gt; @import &#34;/build/reveal.js/css/" />
+
+
+        <!-- For reveal.js -->
+        <link rel="stylesheet" href="https://hackmd.io/build/reveal.js/css/reveal.css">
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+        
+<link href="https://hackmd.io/build/font.f364a5dec061568bea94.css" rel="stylesheet">
+
+<link href="https://hackmd.io/build/slide-styles.f364a5dec061568bea94.css" rel="stylesheet">
+
+<link href="https://hackmd.io/build/slide.f364a5dec061568bea94.css" rel="stylesheet">
+
+
+        
+
+        <!-- For reveal.js theme -->
+        <link rel="stylesheet" href="https://hackmd.io/build/reveal.js/css/theme/black.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="https://hackmd.io/build/reveal.js/lib/css/zenburn.css">
+        <!-- For overwrite reveal.js -->
+        <link rel="stylesheet" href="https://hackmd.io/css/slide.css">
+
+        <!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+            link.href = 'https://hackmd.io/build/reveal.js/' + (window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css');
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="reveal">
+                <div class="slides" style="display: none;">
+
+&lt;!-- Adjust the default reveal.js style --&gt;
+&lt;style type=&#34;text/css&#34;&gt;
+@import &#34;/build/reveal.js/css/theme/white.css&#34;;
+.reveal h1, .reveal h2, .reveal h3 { text-align: left; text-transform: none }
+.reveal p, .reveal ul, .reveal ol { text-align: left; display: block; }
+&lt;/style&gt;
+
+&lt;!--
+Unter https://hackmd.io/p/S1YmXWC0e werden die Slides im Präsentationsmodus mit reveal.js angezeigt. Mit &#34;S&#34; werden die Speaker-Notes angezeigt.
+--&gt;
+
+# Wikidata as authority linking hub
+
+Joachim Neubert (ZBW)
+Jakob Voß (VZG)
+
+---
+
+# Introduction
+
+---
+
+## Authority files
+
+Consistently refer to entities
+
+* Via identifier (&#34;things, not strings&#34;)
+* GND, MeSH, STW, ISIL, RePEc-Authors...
+
+---
+
+## Linking hubs
+
+Connect identifiers among authority files
+
+* `owl:sameAs`, `skos:exactMatch`, `skos:closeMatch`...
+* [VIAF](http://viaf.org), sameAs.org, [Wikidata](https://wikidata.org)...
+
+---
+
+## Wikidata
+
+* Knowledge base of Wikimedia projects
+* All kinds of entities
+    * concepts, places, people, works...
+
+---
+
+## Wikidata Usage
+
+* Editable by anyone
+    * via Website and API
+    * via apps that use the API
+* Data available
+    * http://query.wikidata.org/ (SPARQL)
+    * JSON API &amp; database dumps
+
+---
+
+## Wikidata Statements
+
+![](https://upload.wikimedia.org/wikipedia/commons/c/ce/Wikidata_statement_with_ids.svg)
+
+Note:
+
+Wikidata consists of 
+* Items
+    * uniquely identified by an item-id (Q...)
+    * having a label in each language
+* Statements
+    * each with a property
+        * uniquely identified with a property-id (P...)
+    * and a value (string, date, item, external identifier...)
+    * and optional qualifiers and references
+
+---
+
+## Wikidata item example
+
+![](https://i.imgur.com/05SpqBX.jpg)
+
+Note: 
+
+* This is a more condense display of a Wikidata item, based on the &#34;SQID&#34; Wikidata browser. 
+* Note the list of identifiers for this item/person, linking to other authority files
+
+---
+
+## Authority file identifiers in Wikipedia
+
+More than half of all Wikidata properties
+
+* Datatype external identifier (~1,750)
+* [Properties for authority control](https://www.wikidata.org/wiki/Q18614948) (~1,500)
+* Properties with corresponding KOS (~220)
+
+Note: The total number is hard to measure because of the &#34;organic&#34; organization of Wikidata
+
+---
+
+## Wikidata---ISIL (organizations)
+
+Example:
+
+*Neuschwanstein Castle* ([Q4152](https://www.wikidata.org/wiki/Q4152))
+ISIL ([P791](https://www.wikidata.org/wiki/Property:P791)): *DE-MUS-051612*
+
+Current state:
+
+* lobid.org: ~30,000 ISIL (DACH only)
+* Wikidata: ~6,500 ISIL
+
+---
+
+## Tool: *Mix&#39;n&#39;match*
+
+* Web application mapping tool 
+* Helps to add 1-to-1-mappings
+
+https://tools.wmflabs.org/mix-n-match/
+
+---
+
+## Step 1: Upload ISIL list with names
+
+![](https://i.imgur.com/Sh89f3l.png)
+
+
+---
+
+## Step 2: Confirm match candidates
+
+![Automatically matched](https://i.imgur.com/st847ta.png)
+
+---
+
+![Visual Mode](https://i.imgur.com/5cfKRsh.png)
+
+Note: The visual mode is even more handy to confirm mappings
+
+---
+
+# GND---RePEc Authors
+
+* In [EconBiz](http://www.econbiz.de) economics search portal authors are identified differently:
+    * by **GND ID** in data from ZBW&#39;s Econis catalog (and from others)
+    * by **RePEc Author ID** in data from *Research Papers for Economics*
+* Large volumes: 450,000 vs. 50,000 distinct persons
+* ~3,000 pairs of IDs discovered in a previous project
+
+Note: Maintaining a custom mapping environment would require
+    * custom software, database, operations
+    * access limited to ZBW staff
+
+---
+
+## Utilizing Wikidata as Linking Hub
+
+* Wikidata-Properties for both identifier systems
+    * GND ID ([P227](https://www.wikidata.org/wiki/Property:P227)): ~375,000 items which are humans
+    * RePEc Short-ID ([P2428](https://www.wikidata.org/wiki/Property:P2428)): ~2,200 items
+* Since every identifier should identify exactly one person, we can derive
+    *  GND ID  ⟶ Wikidata ID  ⟶ RePEc ID
+    *  RePEc ID ⟶ Wikidata ID ⟶ GND ID
+
+    where both properties have values (~760 items)
+
+Note: I describe the process in 6 steps, which should be portable to other similar mappings. All numbers as of April 25th 2017
+
+---
+
+## Step 1: Supplement WD items with RePEc Short-IDs
+
+* 77 WD items with GND ID without RePEc Short-ID
+
+* Transform to quickstatements input file ([SPARQL query](http://zbw.eu/beta/sparql-lab/?endpoint=http://zbw.eu/beta/sparql/repec/query&amp;queryRef=https://api.github.com/repos/zbw/repec-ras/contents/sparql/missing_ids_in_wikidata_from_mapping.rq), [script](https://github.com/zbw/repec-ras/blob/master/bin/create_missing_ids_in_wikidata_from_mapping.pl))
+
+* Copy &amp; paste to *[QuickStatements2](https://tools.wmflabs.org/quickstatements/)*
+
+---
+
+### Bulk editing with Quickstatements2
+
+![](https://i.imgur.com/yYx3Vxn.png)
+
+Further simplification with upcoming release of *wdmapper* command line tool
+
+---
+
+## Step 2: Supplement WD items with GND IDs
+
+* 384 WD items with RePEc Short-ID without GND ID
+* *same process as other direction*
+
+---
+
+## Step 3: Add &#34;most important&#34; authors with RePEc identifiers
+
+* Scraped from ranking pages ([Top 10% economists](https://ideas.repec.org/top/top.person.all.html), [Top 10% female economists](https://ideas.repec.org/top/top.women.html))
+* Transform and load into *Mix&#39;n&#39;match*
+* *same process as ISIL use case*
+    * Confirm match candidates (1,600 of 4,600)
+
+---
+
+## Step 4: Add &#34;most important&#34; authors with GND identifiers
+
+* 18,000 authors with &gt;30 publications in EconBiz
+* loaded as *Mix&#39;n&#39;match* set *GND economists (de)*
+* order by publication count (descending)
+* 25% matched automatically with Wikidata items
+
+⇒ *Work to do*
+
+---
+
+## Step 5: Rinse and repeat
+
+* Repeat *Mix&#39;n&#39;match* &#34;sync&#34; operation before starting to work manually
+    * often, people are adding data at fast rate!
+* Repeat bulk adding of missing identifiers to make use of identifiers added meanwhile
+
+---
+
+## Step 6: Add missing Wikidata items
+
+* Verify missing authors indeed are not in Wikidata
+* Generate Wikidata items from from existing mappings or lists, e.g. top female economists
+
+![Using Wikidata&#39;s QuickStatements tool](https://i.imgur.com/h95sTQl.png)
+
+---
+
+## Result
+
+The mapping, currently (2017-05-02) consisting of 
+
+* 1233 matching GND - RePEc short IDs
+    * 769 matches from ZBW&#39;s mapping
+    * 464 matches contributed by non-ZBW staff
+* Finally all 3,000 pairs from ZBW&#39;s mapping
+
+
+---
+
+### Further Results
+
+* Identifiers and items added by individual Wikidata contributors add up continuously
+* Mapping steps can be repeated with additional input data (e.g., [top economists from Latin America](https://ideas.repec.org/top/top.lamerica.html#authors), &#34;all authors affiliated to Leibniz institutions in economics&#34;...
+* Further identifiers (VIAF, ORCID, ...) provide more opportunities for indirect matching
+
+Results from _every step in the mapping process_ and all indiviual efforts immediately available and preserved
+
+---
+
+# Tools
+
+* *Mix&#39;n&#39;match* (intellectual matching)
+* *QuickStatements2* (addition of generated properties and items)
+* [*wdmapper*](https://github.com/gbv/wdmapper) (harvest, diff &amp; add mappings)
+    * Support of indirect mappings (e.g., GND-WD-RePEc) in one step
+    * Work in progress (no adding by now)
+    * Daily harvested mappings in multiple formats:
+      http://coli-conc.gbv.de/concordances/wikidata/
+
+---
+
+## Limitations
+
+* Mapping algorithms to find mapping candidates
+* Limitation to easy-1-1-relationships
+    * part-whole
+    * often new Wikidata items required
+    * depends on the use case
+* Large sets of mappings and results
+* Regular review required for maintainance
+
+Note: 
+* We just relied on the basic mapping algorithm build into Mix&#39;n&#39;match and added already existing mappings to Wikidata
+* Each tool has its limitation on large result sets
+
+---
+
+# Benefits
+
+* Outsourced interface, storage, and operation
+* Crowdsourced mapping maintenance
+* Wikidata has policies and tools for data quality
+* Open Data for multiple and unknown uses
+* Additional benefits:
+    * multilingual Wikipedia links
+    * lots of (formatted) data
+    * links to multiple other vocabularies
+    * nice pictures ...
+</div>
+            </div>
+
+            <div id="meta" style="display: none;">{&#34;title&#34;:&#34;Wikidata as authority linking hub&#34;,&#34;lang&#34;:&#34;en&#34;,&#34;slideOptions&#34;:{&#34;README&#34;:&#34;https://github.com/hakimel/reveal.js/#configuration&#34;,&#34;slideNumber&#34;:false,&#34;showNotes&#34;:false,&#34;theme&#34;:&#34;white&#34;}}</div>
+
+            <div class="footer">
+                <div class="unselectable hidden-print" style="color: #777;">
+                    <small>
+                        <span>
+                            
+                                <span class="ui-no-lastchangeuser">&thinsp;<i class="fa fa-clock-o fa-fw" style="width: 18px;"></i></span>
+                            
+                            &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                            <span class="ui-lastchange text-uppercase" data-createtime="Wed Apr 26 2017 11:23:13 GMT+0000 (UTC)" data-updatetime="Wed May 03 2017 12:32:07 GMT+0000 (UTC)"></span>
+                        </span>
+                        <span class="pull-right">142 views <a href="#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+                        <br>
+                        
+                    </small>
+                </div>
+                
+            </div>
+        </div>
+
+        <script src="https://hackmd.io/js/ga.js" async defer></script>
+<script src="https://cdn.ravenjs.com/3.13.1/raven.min.js" crossorigin="anonymous"></script>
+<script>Raven.config('https://b1ed86878f414ccc832dc0f63ffe2daa@sentry.io/121416').install();</script>
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLW9Z3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ messageStyle: "none", skipStartupTypeset: true ,tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true }});
+        </script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/lib/js/head.min.js" integrity="sha256-+09kLhwACKXFPDvqo4xMMvi4+uXFsRZ2uYGbeN1U8sI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js" integrity="sha256-lvaInSKflJWLPqf5N5oHr/UZFwXKD6gckerdwoHqECY=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.0/mermaid.min.js" integrity="sha256-1uR+pqxH5fN/rOZcZTb9c5+bR3OIYEKzu2sI11Dnj9A=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+        <script src="https://hackmd.io/build/constant.js"></script>
+
+<script src="https://hackmd.io/build/6.slide.f364a5dec061568bea94.js" defer></script>
+
+
+        
+    </body>
+</html>
+
+
