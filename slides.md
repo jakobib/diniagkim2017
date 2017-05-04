@@ -10,9 +10,10 @@ slideOptions:
 
 <!-- Adjust the default reveal.js style -->
 <style type="text/css">
-@import "/build/reveal.js/css/theme/white.css";
+@import "https://hackmd.io/build/reveal.js/css/theme/white.css";
 .reveal h1, .reveal h2, .reveal h3 { text-align: left; text-transform: none }
 .reveal p, .reveal ul, .reveal ol { text-align: left; display: block; }
+.reveal section img { border: none; box-shadow: none; }
 </style>
 
 <!--
@@ -21,8 +22,11 @@ Unter https://hackmd.io/p/S1YmXWC0e werden die Slides im Präsentationsmodus mit
 
 # Wikidata as authority linking hub
 
-Joachim Neubert (ZBW)
-Jakob Voß (VZG)
+*Joachim Neubert (ZBW)*
+*Jakob Voß (VZG)*
+
+DINI AG KIM Workshop
+Mannheim, 4. Mai 2017
 
 ---
 
@@ -46,6 +50,12 @@ Connect identifiers among authority files
 * `owl:sameAs`, `skos:exactMatch`, `skos:closeMatch`...
 * [VIAF](http://viaf.org), sameAs.org, [Wikidata](https://wikidata.org)...
 
+![](https://i.imgur.com/dgRaN33.png)
+
+
+Note: * VIAF - Libraries / algorithmically generated clusters
+* samAs - Semantic Web / harvested coreference links from the web
+* wikidata - Community / curated content
 ---
 
 ## Wikidata
@@ -108,7 +118,7 @@ Note: The total number is hard to measure because of the "organic" organization 
 
 ---
 
-## Wikidata---ISIL (organizations)
+# Wikidata---ISIL (organizations)
 
 Example:
 
@@ -117,7 +127,7 @@ ISIL ([P791](https://www.wikidata.org/wiki/Property:P791)): *DE-MUS-051612*
 
 Current state:
 
-* lobid.org: ~30,000 ISIL (DACH only)
+* lobid.org: ~15,000 ISIL (DACH only)
 * Wikidata: ~6,500 ISIL
 
 ---
@@ -144,7 +154,8 @@ https://tools.wmflabs.org/mix-n-match/
 
 ---
 
-![Visual Mode](https://i.imgur.com/5cfKRsh.png)
+![Visual Mode](https://i.imgur.com/9WWCrCa.png)
+
 
 Note: The visual mode is even more handy to confirm mappings
 
@@ -158,9 +169,13 @@ Note: The visual mode is even more handy to confirm mappings
 * Large volumes: 450,000 vs. 50,000 distinct persons
 * ~3,000 pairs of IDs discovered in a previous project
 
-Note: Maintaining a custom mapping environment would require
-    * custom software, database, operations
-    * access limited to ZBW staff
+Note: 
+* GND = well known and interlinked
+* RAS = high qualitiy data, curated by the authors themselves, incented by rankings - but: linked to nothing else in the world
+
+Maintaining a custom mapping environment would require
+* custom software, database, operations
+* access limited to ZBW staff
 
 ---
 
@@ -228,7 +243,7 @@ Further simplification with upcoming release of *wdmapper* command line tool
 
 * Repeat *Mix'n'match* "sync" operation before starting to work manually
     * often, people are adding data at fast rate!
-* Repeat bulk adding of missing identifiers to make use of identifiers added meanwhile
+* Repeat bulk adding of missing identifiers to make use of complementing identifiers added meanwhile
 
 ---
 
@@ -266,12 +281,14 @@ Results from _every step in the mapping process_ and all indiviual efforts immed
 # Tools
 
 * *Mix'n'match* (intellectual matching)
-* *QuickStatements2* (addition of generated properties and items)
+* *QuickStatements/2* (addition of generated properties and items)
 * [*wdmapper*](https://github.com/gbv/wdmapper) (harvest, diff & add mappings)
     * Support of indirect mappings (e.g., GND-WD-RePEc) in one step
     * Work in progress (no adding by now)
     * Daily harvested mappings in multiple formats:
       http://coli-conc.gbv.de/concordances/wikidata/
+
+Tools for mass editing require approved bot account.
 
 ---
 
@@ -285,7 +302,7 @@ Results from _every step in the mapping process_ and all indiviual efforts immed
 * Large sets of mappings and results
 * Regular review required for maintainance
 
-Note: 
+Note:
 * We just relied on the basic mapping algorithm build into Mix'n'match and added already existing mappings to Wikidata
 * Each tool has its limitation on large result sets
 
@@ -299,7 +316,6 @@ Note:
 * Open Data for multiple and unknown uses
 * Additional benefits:
     * multilingual Wikipedia links
-    * lots of (formatted) data
+    * lots of (formatted) data, nice pictures, ...
     * links to multiple other vocabularies
-    * nice pictures ...
 
