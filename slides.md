@@ -117,7 +117,7 @@ ISIL ([P791](https://www.wikidata.org/wiki/Property:P791)): *DE-MUS-051612*
 
 Current state:
 
-* lobid.org: ~30,000 ISIL (DACH only)
+* lobid.org: ~15,000 ISIL (DACH only)
 * Wikidata: ~6,500 ISIL
 
 ---
